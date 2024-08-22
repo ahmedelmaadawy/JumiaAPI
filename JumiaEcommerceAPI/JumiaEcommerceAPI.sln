@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JumiaEcommerceAPI.Presentation", "JumiaEcommerceAPI.Presentation.csproj", "{14CC3CE4-63E0-4BB2-8E33-6A07D90BA9E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JumiaEcommeceAPI.DataAccess", "..\JumiaEcommeceAPI.DataAccess\JumiaEcommeceAPI.DataAccess.csproj", "{F8DA62FE-A319-4EBF-A41B-8F274DE85B34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JumiaEcommerceAPI.BusinessLogic", "..\JumiaEcommerceAPI.BusinessLogic\JumiaEcommerceAPI.BusinessLogic.csproj", "{25D4D9C2-E546-4CA7-8AC4-98F65E50A20F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14CC3CE4-63E0-4BB2-8E33-6A07D90BA9E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14CC3CE4-63E0-4BB2-8E33-6A07D90BA9E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14CC3CE4-63E0-4BB2-8E33-6A07D90BA9E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14CC3CE4-63E0-4BB2-8E33-6A07D90BA9E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8DA62FE-A319-4EBF-A41B-8F274DE85B34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8DA62FE-A319-4EBF-A41B-8F274DE85B34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8DA62FE-A319-4EBF-A41B-8F274DE85B34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8DA62FE-A319-4EBF-A41B-8F274DE85B34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25D4D9C2-E546-4CA7-8AC4-98F65E50A20F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25D4D9C2-E546-4CA7-8AC4-98F65E50A20F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25D4D9C2-E546-4CA7-8AC4-98F65E50A20F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25D4D9C2-E546-4CA7-8AC4-98F65E50A20F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F73DD62B-4C3D-4881-997D-38F2DE50CF59}
+	EndGlobalSection
+EndGlobal
