@@ -1,4 +1,7 @@
 
+using JumiaEcommeceAPI.DataAccess.Context;
+using Microsoft.EntityFrameworkCore;
+
 namespace JumiaEcommerceAPI
 {
     public class Program
@@ -12,6 +15,12 @@ namespace JumiaEcommerceAPI
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            //Context
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+            });
 
             var app = builder.Build();
 
