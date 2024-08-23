@@ -12,8 +12,6 @@ namespace JumiaEcommeceAPI.DataAccess.Entities
         public string? Status { get; set; }
         [Required]
         public string? ShippingAddress { get; set; }
-        public int PaymentId { get; set; }
-        public virtual Payment? Payment { get; set; }
         public virtual ICollection<OrderItem>? Items { get; set; }
     }
 }
