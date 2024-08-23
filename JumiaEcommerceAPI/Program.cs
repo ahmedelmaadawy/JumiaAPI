@@ -18,9 +18,11 @@ namespace JumiaEcommerceAPI
             //Context
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+                options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("Default"));
                 options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             });
+            //AutoMapper
+            builder.Services.AddAutoMapper(typeof(Program));
 
             var app = builder.Build();
 
