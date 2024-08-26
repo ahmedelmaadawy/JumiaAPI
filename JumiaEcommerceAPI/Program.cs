@@ -1,5 +1,8 @@
 
 using JumiaEcommeceAPI.DataAccess.Context;
+using JumiaEcommeceAPI.DataAccess.Entities;
+using JumiaEcommeceAPI.DataAccess.Interfaces;
+using JumiaEcommeceAPI.DataAccess.Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace JumiaEcommerceAPI
@@ -23,6 +26,20 @@ namespace JumiaEcommerceAPI
             });
             //AutoMapper
             builder.Services.AddAutoMapper(typeof(Program));
+            builder.Services.AddScoped<ApplicationDbContext>();
+
+            // Repository
+            //builder.Services.AddScoped<IGenericRepository<X>, GenericRepository<X>>();
+            builder.Services.AddScoped<IGenericRepository<Category>, GenericRepository<Category>>();
+            builder.Services.AddScoped<IGenericRepository<Order>, GenericRepository<Order>>();
+            builder.Services.AddScoped<IGenericRepository<OrderItem>, GenericRepository<OrderItem>>();
+            builder.Services.AddScoped<IGenericRepository<Payment>, GenericRepository<Payment>>();
+            builder.Services.AddScoped<IGenericRepository<Product>, GenericRepository<Product>>();
+            builder.Services.AddScoped<IGenericRepository<ProductImage>, GenericRepository<ProductImage>>();
+            builder.Services.AddScoped<IGenericRepository<Review>, GenericRepository<Review>>();
+            builder.Services.AddScoped<IGenericRepository<Seller>, GenericRepository<Seller>>();
+
+
 
             var app = builder.Build();
 
