@@ -4,7 +4,7 @@ using JumiaEcommeceAPI.DataAccess.Interfaces;
 
 namespace JumiaEcommeceAPI.DataAccess.Repository
 {
-    internal class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _context;
         public IGenericRepository<Review> Reviews { get; private set; }
