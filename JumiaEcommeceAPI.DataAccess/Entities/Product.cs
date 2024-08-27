@@ -26,6 +26,7 @@ namespace JumiaEcommeceAPI.DataAccess.Entities
 
         public int SellerId { get; set; }
         public int CategoryId { get; set; }
+        public virtual ICollection<Review>? Reviews { get; set; }
         public virtual ICollection<ProductImage>? Images { get; set; }
         public virtual Seller? Seller { get; set; }
         public virtual Category? Category { get; set; }
