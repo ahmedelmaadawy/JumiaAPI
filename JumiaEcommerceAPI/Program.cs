@@ -39,6 +39,8 @@ namespace JumiaEcommerceAPI
             builder.Services.AddScoped<IGenericRepository<Review>, GenericRepository<Review>>();
             builder.Services.AddScoped<IGenericRepository<Seller>, GenericRepository<Seller>>();
 
+            builder.Services.AddScoped<IUnitOfWork, IUnitOfWork>();
+
 
 
             var app = builder.Build();
