@@ -39,7 +39,7 @@ namespace JumiaEcommerceAPI
             builder.Services.AddScoped<IGenericRepository<Review>, GenericRepository<Review>>();
             builder.Services.AddScoped<IGenericRepository<Seller>, GenericRepository<Seller>>();
 
-            builder.Services.AddScoped<IUnitOfWork, IUnitOfWork>();
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
 
