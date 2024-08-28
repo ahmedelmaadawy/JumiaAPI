@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using JumiaEcommeceAPI.DataAccess.Entities;
 using JumiaEcommeceAPI.DataAccess.Interfaces;
-using JumiaEcommerceAPI.BusinessLogic.DTOs;
+using JumiaEcommerceAPI.BusinessLogic.DTOs.Product;
 using JumiaEcommerceAPI.BusinessLogic.Interfaces;
 
 namespace JumiaEcommerceAPI.BusinessLogic.Services
@@ -27,6 +27,22 @@ namespace JumiaEcommerceAPI.BusinessLogic.Services
             List<Product> products = _context.Products.getAll().ToList();
             var productsToReturn = _mapper.Map<List<ProductToReadDTO>>(products);
             return productsToReturn;
+        }
+
+        public ProductDetailsDTO GetById(int id)
+        {
+            Product product = _context.Products.getById(id);
+            if (product is null)
+                throw new Exception("Product does not exist in database wrong Id");
+            var productToReturn = _mapper.Map<ProductDetailsDTO>(product);
+            if (product.Images.Count() > 0)
+            {
+                foreach (var item in product.Images)
+                {
+                    productToReturn.ImagesUrl.Add(item.Id.ToString());
+                }
+            }
+            return productToReturn;
         }
     }
 }

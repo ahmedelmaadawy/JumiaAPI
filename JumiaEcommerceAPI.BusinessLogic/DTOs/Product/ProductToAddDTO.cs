@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace JumiaEcommerceAPI.BusinessLogic.DTOs
+namespace JumiaEcommerceAPI.BusinessLogic.DTOs.Product
 {
     public class ProductToAddDTO
     {

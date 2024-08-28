@@ -32,7 +32,14 @@ namespace JumiaEcommerceAPI
             //AutoMapper
             builder.Services.AddAutoMapper(typeof(MappingProfile));
             builder.Services.AddScoped<ApplicationDbContext>();
-
+            //CORS Policy
+            builder.Services.AddCors(corsOptions =>
+            {
+                corsOptions.AddPolicy("MyPolicy", CorsPolicyBuilder =>
+                {
+                    CorsPolicyBuilder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                });
+            });
             // Repository
             //builder.Services.AddScoped<IGenericRepository<X>, GenericRepository<X>>();
             builder.Services.AddScoped<IGenericRepository<Category>, GenericRepository<Category>>();
@@ -49,6 +56,7 @@ namespace JumiaEcommerceAPI
             //Services
             builder.Services.AddScoped<IProductService, ProductService>();
             builder.Services.AddScoped<ICategoryService, CategoryService>();
+            builder.Services.AddScoped<IProductImageService, ProductImageService>();
 
             var app = builder.Build();
 
@@ -58,7 +66,8 @@ namespace JumiaEcommerceAPI
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            app.UseStaticFiles();
+            app.UseCors("MyPolicy");
             app.UseAuthorization();
 
 

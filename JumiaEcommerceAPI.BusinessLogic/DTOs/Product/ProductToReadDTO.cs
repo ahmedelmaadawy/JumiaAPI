@@ -1,4 +1,4 @@
-﻿namespace JumiaEcommerceAPI.BusinessLogic.DTOs
+﻿namespace JumiaEcommerceAPI.BusinessLogic.DTOs.Product
 {
     public class ProductToReadDTO
     {
@@ -13,5 +13,6 @@
         public int? Discount { get; set; } = 0;
 
         public string? CategoryName { get; set; }
+        public string ImageUrl { get; set; } = string.Empty;
     }
 }
