@@ -3,7 +3,11 @@ using JumiaEcommeceAPI.DataAccess.Context;
 using JumiaEcommeceAPI.DataAccess.Entities;
 using JumiaEcommeceAPI.DataAccess.Interfaces;
 using JumiaEcommeceAPI.DataAccess.Repository;
+using JumiaEcommerceAPI.BusinessLogic.Interfaces;
+using JumiaEcommerceAPI.BusinessLogic.Mapping;
+using JumiaEcommerceAPI.BusinessLogic.Services;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 namespace JumiaEcommerceAPI
 {
@@ -15,7 +19,8 @@ namespace JumiaEcommerceAPI
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddJsonOptions(x =>
+   x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             //Context
@@ -25,7 +30,7 @@ namespace JumiaEcommerceAPI
                 options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             });
             //AutoMapper
-            builder.Services.AddAutoMapper(typeof(Program));
+            builder.Services.AddAutoMapper(typeof(MappingProfile));
             builder.Services.AddScoped<ApplicationDbContext>();
 
             // Repository
@@ -41,7 +46,9 @@ namespace JumiaEcommerceAPI
 
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-
+            //Services
+            builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
 
             var app = builder.Build();
 
